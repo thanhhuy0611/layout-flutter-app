@@ -50,21 +50,21 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           child: Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
-                  Image.asset(
-                    'assets/drawable-hdpi/Logo.png',
-                    width: 238,
-                    height: 238,
-                  ),
-                  SizedBox(height: 209),
-                  Image.asset(
-                    'assets/drawable-hdpi/Loding icon.png',
+                  Container(
+                    padding: EdgeInsets.fromLTRB(70,210,70,210),
+                    child: Image.asset(
+                      'assets/drawable-hdpi/Logo.png',
+                      width: 238,
+                      height: 238,
+                  )),
+                  // SizedBox(height: 209),
+                  Center(child: Image.asset(
+                    'assets/drawable-hdpi/icon.png',
                     height: 40,
                     width: 20,
-                  ),
+                  ))
                 ],
           ))),
     );
