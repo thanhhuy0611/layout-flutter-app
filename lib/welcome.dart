@@ -1,4 +1,6 @@
 import 'package:design_layout/SplashScreen.dart';
+import 'package:design_layout/login.dart';
+import 'package:design_layout/signup.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -9,7 +11,7 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
 
   void _navigatorTo(Widget page) {
-    Navigator.pushReplacement(
+    Navigator.push(
       context, 
       MaterialPageRoute(builder: (context) =>  page));
   }
@@ -42,7 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 18.0),
               child: Center(
-                child: Image.asset('assets/drawable-hdpi/Image.png', height: 216, width: 339,)
+                child: Image.asset('assets/drawable-hdpi/Poster.png', height: 216, width: 339,)
               ),
             ),
             SizedBox(height: 110),
@@ -59,7 +61,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     ),
                     padding: EdgeInsets.all(0),
                     onPressed: () {
-                      _navigatorTo(SplashScreen()); // push to log in
+                      _navigatorTo(LoginPage()); // push to log in
                     },
                     child: Ink(
                       decoration: BoxDecoration(
@@ -78,14 +80,14 @@ class _WelcomePageState extends State<WelcomePage> {
                         constraints: BoxConstraints(minWidth: double.infinity, minHeight: 50),
                         child: Text(
                         'Log in',
-                        style: TextStyle(fontSize: 16, color: Colors.white)
+                        style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400)
                       )),
                     ),
                   ),
                   SizedBox(height: 15),
                   FlatButton(
                     onPressed: () {
-                      _navigatorTo(SplashScreen());
+                      _navigatorTo(SignupPage());
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(10.0),
@@ -95,7 +97,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       alignment: Alignment.center,
                       child: Text(
                         'Signup',
-                        style: TextStyle(fontSize: 16, color: Colors.black)
+                        style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400)
                     )),
                   ),
                 ],

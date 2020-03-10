@@ -1,8 +1,9 @@
+import 'package:design_layout/home.dart';
 import 'package:design_layout/main.dart';
+import 'package:design_layout/welcome.dart';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'main.dart';
-import 'welcome.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     _moclCheckForSession().then((status) {
       if (status) {
-        _navigatorTo(MyHomePage(title: "My Home page"));
+        _navigatorTo(HomePage());
       } else {
         _navigatorTo(WelcomePage());
       }
@@ -25,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<bool> _moclCheckForSession() async {
     await Future.delayed(Duration(seconds: 4), () {});
 
-    return false;
+    return false; // user is not login
   }
 
   void _navigatorTo(Widget page) {
